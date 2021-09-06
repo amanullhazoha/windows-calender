@@ -1,0 +1,26 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.head p {
+  font-size: 19px;
+  color: #bdbdbd;
+  padding-bottom: 15px;
+}
+
+.head button {
+  background: transparent;
+  color: #bdbdbd;
+  border: none;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.head button:hover {
+  color: #84a4bd;
+}
+
+.head button:first-child {
+  margin-right: 10px;
+}

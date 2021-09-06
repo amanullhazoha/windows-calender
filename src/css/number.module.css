@@ -1,0 +1,18 @@
+.number ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 6px;
+}
+
+.number ul li {
+  width: 47px;
+  height: 47px;
+  text-align: center;
+  border: 2px solid transparent;
+  margin: 2px;
+  line-height: 40px;
+}
+
+.number ul li:hover {
+  border: 2px solid #a3a2a0;
+}

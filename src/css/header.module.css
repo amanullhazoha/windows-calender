@@ -1,0 +1,22 @@
+#header {
+  border-bottom: 1px solid #a3a2a0;
+}
+
+#header h1 {
+  font-family: "Besley", serif;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 5px;
+}
+
+#header h1 span {
+  font-size: 18px;
+  color: #a3a2a0;
+  letter-spacing: 2px;
+}
+
+#header p {
+  font-size: 16px;
+  color: #84a4bd;
+}

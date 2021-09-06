@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Besley:ital@1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+  background: #353330;
+}
+
+.content {
+  padding: 15px;
+}
