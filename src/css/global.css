@@ -24,3 +24,12 @@ li {
 .content {
   padding: 15px;
 }
+
+.active,
+.deActive {
+  font-size: 18px;
+}
+
+.deActive {
+  color: #676767;
+}
