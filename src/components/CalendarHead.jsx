@@ -1,9 +1,11 @@
 import classes from '../css/calendarHead.module.css';
 import Button from './Button';
 
-const CalenderHead = ({ handelClick, month }) => (
+const CalenderHead = ({ handelClick, month, year }) => (
     <div className={classes.head}>
-        <p>{month} 2021</p>
+        <p>
+            {month} {year}
+        </p>
         <div className={classes.arrowBtn}>
             <Button type="button" onClick={() => handelClick('up')}>
                 <i className="fas fa-chevron-up" />

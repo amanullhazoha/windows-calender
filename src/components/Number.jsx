@@ -1,8 +1,11 @@
 import classes from '../css/number.module.css';
+import monthDayCount from '../lib/monthDayCount';
 
-const Number = ({ day }) => {
+const Number = ({ day, month, year }) => {
+    const days = monthDayCount(month, year);
+
     const arr = [];
-    for (let i = 1; i <= 31; i += 1) {
+    for (let i = 1; i <= days; i += 1) {
         arr.push({ count: i, class: 'active' });
     }
 
@@ -10,7 +13,9 @@ const Number = ({ day }) => {
     for (let i = 0; i < 42; i += 1) {
         li.push({ count: i, class: 'deActive' });
     }
-    li.splice(day, 31, ...arr);
+    li.splice(day, days, ...arr);
+
+    console.log(days);
 
     return (
         <section className={classes.number}>

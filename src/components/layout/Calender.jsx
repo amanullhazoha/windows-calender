@@ -7,15 +7,20 @@ import Content from '../Content';
 import Day from '../Day';
 import Number from '../Number';
 
-class Calender extends Component {
-    getmonth = new Date().getMonth();
+const date = new Date();
 
-    getday = new Date().getDay();
+class Calender extends Component {
+    getmonth = date.getMonth();
+
+    getday = date.getDay();
+
+    getyear = date.getFullYear();
 
     state = {
         number: this.getmonth,
         month: null,
         day: this.getday,
+        year: this.getyear,
     };
 
     componentDidMount() {
@@ -53,13 +58,16 @@ class Calender extends Component {
     };
 
     handelClick = (value) => {
+        const { month, year } = this.state;
+        this.setYear(month, value);
+
         if (value === 'up') {
             this.numberCheck();
 
             this.setState((state) => ({
                 number: state.number - 1,
                 month: monthName(state.number - 1),
-                day: startDay(state.number),
+                day: startDay(state.number, year),
             }));
         }
         if (value === 'down') {
@@ -68,20 +76,35 @@ class Calender extends Component {
             this.setState((state) => ({
                 number: state.number + 1,
                 month: monthName(state.number + 1),
-                day: startDay(state.number + 2),
+                day: startDay(state.number + 2, year),
+            }));
+        }
+    };
+
+    setYear = (month, clickTrack) => {
+        if (month === 'January' && clickTrack === 'up') {
+            // year decrement
+            this.setState((state) => ({
+                year: state.year - 1,
+            }));
+        } else if (month === 'December' && clickTrack === 'down') {
+            // year increment
+            this.setState((state) => ({
+                year: state.year + 1,
             }));
         }
     };
 
     render() {
-        const { month, day } = this.state;
+        const { month, day, year } = this.state;
+        console.log(year, month);
 
         return (
             <section className={classes.calender}>
                 <Content>
-                    <CalenderHead handelClick={this.handelClick} month={month} />
+                    <CalenderHead handelClick={this.handelClick} month={month} year={year} />
                     <Day />
-                    <Number day={day} />
+                    <Number day={day} month={month} year={year} />
                 </Content>
             </section>
         );

@@ -46,7 +46,7 @@ const monthName = (m) => {
             break;
 
         case 11:
-            month = 'December	';
+            month = 'December';
             break;
         default:
             console.log('Mounth is wrong');
